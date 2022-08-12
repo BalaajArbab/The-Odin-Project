@@ -176,4 +176,15 @@ li {
     font-size: 24px;
 }
 
+.Footer {
+    background-color: #1F2937;
+    display:flex;
+    height:150px;
+    justify-content: center;
+    align-items: center;
+}
 
+.Footer div {
+    font-size: 36px;
+    color: white;
+}
