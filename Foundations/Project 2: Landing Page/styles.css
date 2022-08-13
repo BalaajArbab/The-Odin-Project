@@ -10,11 +10,17 @@ body {
 a {
     text-decoration: none;
     color: grey;
+    margin-right: 15px;
 }
 
 li {
     display: inline;
     list-style-type: none;
+}
+
+.Header .Left svg {
+    color: mediumseagreen;
+        
 }
 
 .Header {
@@ -99,6 +105,7 @@ li {
     width: 160px;
     border: 4px solid black;
     border-radius: 8px;
+    max-height: 160px;
 }
 
 .CardHolder .CardText {
@@ -107,12 +114,12 @@ li {
 
 .Left {
     margin-left: auto;
-    margin-right: 100px; 
+    margin-right: 120px; 
 }
 
 .Right {
     margin-right: auto;
-    margin-left: 100px;
+    margin-left: 120px;
 }
 
 .Header .Left {
