@@ -1,3 +1,17 @@
+const rock = document.querySelector("#Rock");
+const paper = document.querySelector("#Paper");
+const scissors = document.querySelector("#Scissors");
+
+const output = document.querySelector("#Output Span");
+
+const scores = document.querySelectorAll("#Score .Count");
+let scoreCounts = [0, 0, 0];
+
+rock.addEventListener("click", Game);
+paper.addEventListener("click", Game);
+scissors.addEventListener("click", Game);
+
+
 function GetComputerChoice()
 {
     switch(RandomInt(0, 3))
@@ -22,57 +36,81 @@ function RandomInt(min, max)
 
 function PlayRound(playerSelection, computerSelection)
 {
-    let winrar = 0;
+    playerSelection = playerSelection.toLowerCase();
+    let winrar = Infinity;
 
-    if (playerSelection === computerSelection) winrar;
+    console.log([playerSelection, computerSelection]);
+
+    if (playerSelection === computerSelection) winrar = 0;
     else if (playerSelection === "rock")
     {
-        if (computerSelection === "paper") --winrar;
-        if (computerSelection === "scissors") ++winrar;
+        if (computerSelection === "paper") winrar  = -1;
+        if (computerSelection === "scissors") winrar = 1;
     }
     else if (playerSelection === "paper")
     {
-        if (computerSelection === "rock") ++winrar;
-        if (computerSelection === "scissors") --winrar;
+        if (computerSelection === "rock") winrar = 1;
+        if (computerSelection === "scissors") winrar  = -1;
     }
     else if (playerSelection === "scissors")
     {
-        if (computerSelection === "rock") --winrar;
-        else ++winrar;
+        if (computerSelection === "rock") winrar  = -1;
+        else winrar = 1;
     }
 
+    let str;
     switch(winrar)
     {
         case 0:
-        return "Draw!";
+            str = "Draw!";
+            break;
         case 1:
-            return `You win! ${playerSelection} beats ${computerSelection}`;
+            str = `You win! ${playerSelection} beats ${computerSelection}`;
+            break;
         case -1:
-            return `You lose! ${playerSelection} loses to ${computerSelection}`;
+            str = `You lose! ${playerSelection} loses to ${computerSelection}`;
+            break;
         default:
-            return "you broke the game.";
+            str = "you broke the game.";
+            break;
     }
 
-}
-
-function Game()
-{
-    while (true)
+    const obj =
     {
-        playerSelection = prompt("Enter rock, paper, or scissors!");
-        playerSelection = playerSelection.toLowerCase();
+        text: str,
+        winner: winrar
+    };
 
-        if (!"rock paper scissors".includes(playerSelection)) 
-        {
-            alert("Invalid entry. Try again.");
-            continue;
-        }
-
-        computerSelection = GetComputerChoice();
-
-        console.log(PlayRound(playerSelection, computerSelection));
-
-    }
+    console.log(obj);
+    return obj;
 }
 
-Game();
+function Game(e)
+{
+    const result = PlayRound(this.id, GetComputerChoice());
+    console.log(this.id);
+
+    output.textContent = result.text;
+
+    switch (result.winner)
+    {
+        case 1:
+            ++scoreCounts[0];
+            break;
+        case 0:
+            ++scoreCounts[1];
+            break;
+        case -1:
+            ++scoreCounts[2];
+            break;
+        default:
+            console.error("Error in scoring.");
+    }
+    console.log(scoreCounts);
+    UpdateScores();
+}
+
+function UpdateScores()
+{
+    for (let i = 0; i < 3; ++i) scores[i].textContent = scoreCounts[i];
+}

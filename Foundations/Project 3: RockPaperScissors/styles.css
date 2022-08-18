@@ -1,0 +1,91 @@
+body {
+    background-color: dimgrey;
+    margin: 0px;
+    font-family: "Lucida Sans", Verdana, Tahoma, sans-serif
+}
+
+#Container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin-top: 2vh;
+    align-items: center;
+    height: 96vh;
+    width: 80vw;
+    gap: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1 1 0;
+}
+
+#Heading {
+    font-size: 32px;
+    text-decoration: underline; 
+}
+
+#Output,
+#Score {
+    font-size: 32px;
+}
+
+#Score {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#Score div {
+    margin: 0px 40px;
+    border: 2px solid #5A735F;
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+#Output {
+    flex-grow: 1;
+}
+
+#Score div,
+#Output span,
+#Heading .Text {
+    background-color: #5A735F;
+}
+
+#Output span {
+    text-decoration: underline;
+    border: 2px solid #5A735F;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+span.Underline {
+    white-space: pre;
+    text-decoration: underline; 
+    background-color: #5A735F;
+}
+
+#Buttons {
+    display: flex;
+    gap: 20px;
+}
+
+
+#Buttons div img {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #5A735F;
+    border-radius: 10px;
+    
+}
+
+/* #Rock {
+    background-color: red;
+}
+
+#Paper {
+    background-color: blue;
+}
+
+#Scissors {
+    background-color: aqua;
+} */

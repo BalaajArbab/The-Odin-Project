@@ -5,9 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
+    <div id="Container">
+        <div id="Heading"><span class="Text Underline">rps                                                          </span>
+        </div>
+        <div id="Buttons">
+            <div id="Rock"><img src="./images/rock.png"></div>
+            <div id="Paper"><img src="./images/paper.png"></div>
+            <div id="Scissors"><img src="./images/scissors.png"></div>
+        </div>
+        <div id="Output"><Span>Hi</Span></div>
+        <div id="Score">
+            <div>
+                <span class="Text">Win: </span>
+                <span id="Win" class="Text Count">0</span>
+            </div>
+            <div>
+                <span class="Text">Draw: </span>
+                <span id="Draw" class="Text Count">0</span>
+            </div>
+            <div>
+                <span class="Text">Loss: </span>
+                <span id="Loss" class="Text Count">0</span>
+            </div>
+    </div>
     <script src="./Program.js"></script>
 </body>
 </html>
