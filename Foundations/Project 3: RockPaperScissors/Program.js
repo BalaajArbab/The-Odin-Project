@@ -1,15 +1,11 @@
-const rock = document.querySelector("#Rock");
-const paper = document.querySelector("#Paper");
-const scissors = document.querySelector("#Scissors");
+const buttons = document.querySelectorAll("#Buttons div");
 
 const output = document.querySelector("#Output Span");
 
 const scores = document.querySelectorAll("#Score .Count");
 let scoreCounts = [0, 0, 0];
 
-rock.addEventListener("click", Game);
-paper.addEventListener("click", Game);
-scissors.addEventListener("click", Game);
+buttons.forEach(button => button.addEventListener("click", Game));
 
 
 function GetComputerChoice()
@@ -37,9 +33,7 @@ function RandomInt(min, max)
 function PlayRound(playerSelection, computerSelection)
 {
     playerSelection = playerSelection.toLowerCase();
-    let winrar = Infinity;
-
-    console.log([playerSelection, computerSelection]);
+    let winrar = null;
 
     if (playerSelection === computerSelection) winrar = 0;
     else if (playerSelection === "rock")
@@ -81,18 +75,26 @@ function PlayRound(playerSelection, computerSelection)
         winner: winrar
     };
 
-    console.log(obj);
     return obj;
 }
 
 function Game(e)
 {
     const result = PlayRound(this.id, GetComputerChoice());
-    console.log(this.id);
 
     output.textContent = result.text;
 
-    switch (result.winner)
+    this.classList.add("Scale");
+
+    setTimeout(() => this.classList.remove("Scale"), 200);
+
+    UpdateColours(this, result.winner);
+    UpdateScores(this, result.winner);
+}
+
+function UpdateScores(element, winner)
+{
+    switch (winner)
     {
         case 1:
             ++scoreCounts[0];
@@ -106,11 +108,27 @@ function Game(e)
         default:
             console.error("Error in scoring.");
     }
-    console.log(scoreCounts);
-    UpdateScores();
+
+    for (let i = 0; i < 3; ++i) scores[i].textContent = scoreCounts[i];
 }
 
-function UpdateScores()
+function UpdateColours(element, winner)
 {
-    for (let i = 0; i < 3; ++i) scores[i].textContent = scoreCounts[i];
+    buttons.forEach(button => button.style.cssText = "background-color: #00000000");
+    console.log(element);
+
+    switch (winner)
+    {
+        case 1:
+            element.style.cssText = "background-color: #42FF94";
+            break;
+        case 0:
+            element.style.cssText = "background-color: #E6B220";
+            break;
+        case -1:
+            element.style.cssText = "background-color: #FC303E";
+            break;
+        default:
+            console.error("Error in scoring.");
+    }
 }

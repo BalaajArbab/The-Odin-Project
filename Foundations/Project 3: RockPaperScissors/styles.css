@@ -1,5 +1,5 @@
 body {
-    background-color: dimgrey;
+    background-color: rgb(28, 28, 28);
     margin: 0px;
     font-family: "Lucida Sans", Verdana, Tahoma, sans-serif
 }
@@ -19,8 +19,12 @@ body {
 }
 
 #Heading {
+    background-color: #5A735F;
     font-size: 32px;
     text-decoration: underline; 
+    border: 2px solid #5A735F;
+    border-radius: 20px;
+    padding: 5px 5px;
 }
 
 #Output,
@@ -37,7 +41,7 @@ body {
 #Score div {
     margin: 0px 40px;
     border: 2px solid #5A735F;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 5px 5px;
 }
 
@@ -46,15 +50,13 @@ body {
 }
 
 #Score div,
-#Output span,
-#Heading .Text {
+#Output span {
     background-color: #5A735F;
 }
 
 #Output span {
-    text-decoration: underline;
     border: 2px solid #5A735F;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 5px;
 }
 
@@ -67,25 +69,29 @@ span.Underline {
 #Buttons {
     display: flex;
     gap: 20px;
+    align-items: center;
+}
+
+#Buttons div {
+    border: 4px solid black;
+    border-radius: 10px;
+    width: 220px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
 }
 
 
 #Buttons div img {
     width: 200px;
-    height: 200px;
-    border: 2px solid #5A735F;
-    border-radius: 10px;
-    
+    height: auto;
 }
 
-/* #Rock {
-    background-color: red;
+.Scale {
+    transform: scale(1.1);
 }
-
-#Paper {
-    background-color: blue;
-}
-
-#Scissors {
-    background-color: aqua;
-} */
