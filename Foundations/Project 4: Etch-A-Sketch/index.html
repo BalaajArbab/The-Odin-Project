@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <script src="./Program.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="Container">
+        <div id="Header">
+            <div>Etch-A-Sketch</div>
+        </div>
+        <div id="Mid">
+            <div id="LeftSide">
+                <div id="ColourInput"><input type="color" value="#FF006F" ></div>
+                <div id="OptionsText">Modes</div>
+                <div>
+                    <button class="Default">Click</button>
+                    <button>Hover</button>
+                </div>
+                <div>
+                    <button class="Default">Flat</button>
+                </div>
+                <div>
+                    <button>Eraser</button>
+                    <button>Clear</button>
+                </div>
+                <div>
+                    <input type="range" min="1" max="64" value="16" id="Slider">
+                    <div id="SliderText">16x16</div>
+                </div>
+            </div>
+            <div id="RightSide" class="Shadow">
+
+            </div>
+
+        </div>
+        <div id="Footer">
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>
