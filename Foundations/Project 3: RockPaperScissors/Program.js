@@ -7,7 +7,6 @@ let scoreCounts = [0, 0, 0];
 
 buttons.forEach(button => button.addEventListener("click", Game));
 
-
 function GetComputerChoice()
 {
     switch(RandomInt(0, 3))
@@ -21,7 +20,6 @@ function GetComputerChoice()
         default:
             console.error("Computer roll range error");
     }
-
 }
 
 // min is inclusive, max is exclusive.
