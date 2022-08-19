@@ -2,6 +2,7 @@ let size = 16;
 
 const modes = ["Click", "Hover"];
 let mode = 0;
+let erase = false;
 
 let colour = "#FF006F";
 
@@ -10,41 +11,37 @@ let grid = document.querySelector("#RightSide");
 const colourInput = document.querySelector("#ColourInput input");
 colourInput.addEventListener("input", e => colour = e.target.value);
 
-const selectedColour = "#727A85";
+const selectedButtonColour = "#727A85";
 const buttons = document.querySelectorAll("#LeftSide button");
 
-document.querySelectorAll("button.Default").forEach(x => x.style.cssText = `background-color: ${selectedColour}`);
+document.querySelectorAll("button.Default").forEach(x => x.style.cssText = `background-color: ${selectedButtonColour}`);
 
+// Click button
 buttons[0].addEventListener("click", _ => 
 {
     mode = 0
-    buttons[0].style.cssText = `background-color: ${selectedColour}`;
+    buttons[0].style.cssText = `background-color: ${selectedButtonColour}`;
     buttons[1].style.cssText = `background-color: #FFFFFF;`;
 });
 
+// Hover button
 buttons[1].addEventListener("click", _ => 
 {
     mode = 1
-    buttons[1].style.cssText = `background-color: ${selectedColour}`;
+    buttons[1].style.cssText = `background-color: ${selectedButtonColour}`;
     buttons[0].style.cssText = `background-color: #FFFFFF;`;
 });
 
-let erase = false;
-
+// Eraser button
 buttons[3].addEventListener("click", _ => 
 {
-    if (erase === false) 
-    {
-        buttons[3].style.cssText = `background-color: ${selectedColour}`;
-    }
-    else 
-    {
-        buttons[3].style.cssText = `background-color: #FFFFFF`;
-    }
+    if (erase === false) buttons[3].style.cssText = `background-color: ${selectedButtonColour}`;  
+    else buttons[3].style.cssText = `background-color: #FFFFFF`;
 
     erase = !erase;
 });
 
+// Clear button
 buttons[4].addEventListener("click", Clear);
 
 const slider = document.querySelector("#Slider");
@@ -54,6 +51,18 @@ slider.addEventListener("mouseup", ConstructGrid);
 function Clear()
 {
     document.querySelectorAll(".GridPixel").forEach(x => x.style.cssText = `background-color: #FFFFFF;`);
+}
+
+function ConstructGrid()
+{
+    EmptyGrid();
+
+    for (let i = 0; i < size; ++i)
+    {
+        grid.append(ConstructRow());
+    }
+
+    AddPixelEvents();
 }
 
 function ConstructRow()
@@ -69,18 +78,6 @@ function ConstructRow()
     }
 
     return row;
-}
-
-function ConstructGrid()
-{
-    EmptyGrid();
-
-    for (let i = 0; i < size; ++i)
-    {
-        grid.append(ConstructRow());
-    }
-
-    AddPixelEvents();
 }
 
 function EmptyGrid()
@@ -116,7 +113,6 @@ function ColourIn(e)
     {
         if (e.buttons >= 1) this.style.cssText = `background-color: ${colourInColour};`;
     }
-
 }
 
 function UpdateSizeValue()
