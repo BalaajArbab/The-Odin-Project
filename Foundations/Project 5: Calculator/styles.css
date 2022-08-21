@@ -24,6 +24,7 @@ body {
     align-items: center;
     /* justify-content: space-between; */
     gap: 2vh;
+    border: 0.5vh solid black;
 }
 
 #Display {
@@ -34,6 +35,7 @@ body {
     display: flex;
     justify-content: end;
     align-items: end;
+    transition: 100ms ease;
 }
 
 #Display .Text {
@@ -53,13 +55,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
+    gap: 1vh;
 }
 
 #RightSide {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 1vh;
 }
 
 .Row {
@@ -71,6 +74,17 @@ body {
 
 button {
     border: 0.5vh solid black;
+    transition: ease 50ms;
+}
+
+.TopRow button:hover {
+    filter: brightness(0.8);
+    
+}
+
+#RowContainer button:hover {
+    filter: brightness(1.5);
+    transform: scale(1.1);
 }
 
 #RowContainer button {
@@ -101,4 +115,21 @@ button.Operator {
     border-radius: 5%;
     flex: 0 1 auto;
     font-size: 2vh;
+}
+
+.LastRow {
+        justify-content: space-between;
+    /* margin-left: 20px; */
+}
+
+#Equals.Operator {
+    width: 11.7vh;
+    height: 5vh;
+    font-size: 3vh;
+    border-radius: 5%;
+}
+
+.Rotate {
+    /* transform-origin: center; */
+    /* transform: rotateZ(2deg); */
 }
