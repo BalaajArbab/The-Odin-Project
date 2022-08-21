@@ -19,7 +19,7 @@ body {
     height: 51vh;
     width: 31vh;
     padding: 1vh 1vh;
-    background-color: #50647A;
+    background-color: #E0465F;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +31,7 @@ body {
 #Display {
     height: 15vh;
     width: 26vh;
-    background-color: bisque;
+    background-color: #F0D464;
     margin-top: 2vh;
     display: flex;
     justify-content: end;
@@ -97,11 +97,11 @@ button {
 }
 
 button.Number {
-    background-color: #1A62AD;
+    background-color: #3E73ED;
 }
 
 button.Operator {
-    background-color: #E64E24;
+    background-color: #F78E40;
 }
 
 .TopRow {
@@ -117,7 +117,7 @@ button.Operator {
     flex: 0 1 auto;
     font-size: 2vh;
     font-weight: 500;
-    background-color: #AD241A;
+    background-color: #F78E40;
 
 }
 
