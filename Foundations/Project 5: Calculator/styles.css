@@ -122,8 +122,7 @@ button.Operator {
 }
 
 .LastRow {
-        justify-content: space-between;
-    /* margin-left: 20px; */
+    justify-content: space-between;
 }
 
 #Equals.Operator {
@@ -131,9 +130,4 @@ button.Operator {
     height: 5vh;
     font-size: 3vh;
     border-radius: 5%;
-}
-
-.Rotate {
-    /* transform-origin: center; */
-    /* transform: rotateZ(2deg); */
 }
