@@ -142,4 +142,21 @@ input:focus {
     height: 20vh;
     margin-top: 20vh;
     background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Overlay div {
+    font-size: 5rem;
+    color: white;
+}
+
+a:link {
+    color: rgb(253, 20, 179);
+}
+
+#Overlay img {
+    width: 6vw;
+    height: auto;
 }
