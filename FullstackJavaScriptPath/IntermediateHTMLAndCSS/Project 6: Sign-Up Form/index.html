@@ -9,6 +9,67 @@
     <script src="./Program.js" defer></script>
 </head>
 <body>
+    <div id="Container">
+        <div class="LeftSide">
+            <div id="Overlay"></div>
+            <div class="ImageSource">Background image from <a href="#">here</a></div>
+        </div>
+        <div class="RightSide">
+            <div class="UpperText">
+                This is not a real online service! You know you need something like this 
+                in your life to help you realize your deepest dreams.
+                <br> 
+                Sign up <em>now</em> to get started.
+                <br>
+                <br>
+                You <em>know</em> you want to.
+            </div>
+            <div class="Form">
+                <form action="#" method="post">
+                    <div id="FormInfo">
+                        <div id="FormHeader">Let's Do This!</div>
+                        <div class="Field">
+                            <div class="InputField">
+                                <label for="FirstName">First Name</label>
+                                <input type="text" id="FirstName" minlength="3" maxlength="30">
+                            </div>
+                            <div class="InputField">
+                                <label for="LastName">Last Name</label>
+                                <input type="text" id="LastName" minlength="3" maxlength="30">
+                            </div>
+                        </div>
+                        <div class="Field">
+                            <div class="InputField">
+                                <label for="Email">E-mail</label>
+                                <input type="email" id="Email" minlength="4" maxlength="50">
+                            </div>
+                            <div class="InputField">
+                                <label for="PhoneNumber">Phone Number</label>
+                                <input type="text" id="PhoneNumber" minlength="12" maxlength="12" pattern="\d{12}">
+                            </div>
+                        </div>
+                        <div class="Field">
+                            <div class="InputField">
+                                <label for="Password">Password</label>
+                                <input type="password" id="Password" minlength="3" maxlength="30">
+                                <div id="InvalidPW" class="Hide">*Passwords do not match.</div>
+                            </div>
+                            <div class="InputField">
+                                <label for="Confirm">Confirm Password</label>
+                                <input type="password" id="Confirm" minlength="3" maxlength="30">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit">Create Account</button>
+                </form>
+            </div>
+            
+            <div class="LowerText">
+                Already have an account? <a id="Login" href="#">Log in</a>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
